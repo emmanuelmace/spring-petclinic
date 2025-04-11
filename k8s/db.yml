@@ -20,6 +20,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: demo-db
+  annotations:
+    harness.io/direct-apply: "true"
 spec:
   ports:
     - port: 5432
@@ -31,6 +33,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-db
+  annotations:
+    harness.io/direct-apply: "true"
   labels:
     app: demo-db
 spec:
